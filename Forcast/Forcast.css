@@ -1,0 +1,217 @@
+@import url("../Utils/General.css");
+
+.header {
+    width: 98%;
+    padding: 3% 1%;
+    margin: -0.5% 0% 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0%;
+    background-color: var(--background);
+}
+.header .icon-holder{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    font-size: 90%;
+    transform: rotate(180deg);
+    transition: background-color .5s ease-in-out;
+}
+.header .icon-holder:is(:active){
+    background-color: var(--sub-background);
+}
+.header .Date{
+    width: auto;
+    padding: auto;
+    margin: auto;
+    background-color: transparent;
+    font-size: 85%;
+    font-weight: ;
+    text-align: center;
+    letter-spacing: 0.4;
+}
+
+.Hourly_Forcasts{
+    width: 102%;
+    padding: 2%;
+    margin: 2% 0% 2% -2%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+.Hourly_Forcasts div{
+    width: 65px;
+    height: 80px;
+    padding: 2%;
+    margin: 1% 2%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+}
+.Hourly_Forcasts div button{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: #000;
+    text-align: center;
+    font-size: 95%;
+    object-fit: cover;
+    background-size: cover;
+}
+.Hourly_Forcasts div .fig img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.weather__templ {
+    width: 92%;
+    height: auto;
+    margin: 4%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+}
+.weather__templ .first, .weather__templ .second {
+    width: 96%;
+    margin: 1% 2%;
+    padding: 2% 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.first .fig {
+    width: 120px;
+    height: 120px;
+    margin: 1%;
+    border-radius: 50%;
+    background-color: transparent;
+    object-fit: cover;
+    background-size: cover;
+    font-size: ;
+}
+.first .fig img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.first .weather__condition {
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    font-size: 70%;
+    text-align: center;
+    font-weight: 450;
+}
+.second button {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+}
+.second .weather__temp {
+    font-size: 180%;
+}
+.second .weather__period{
+    font-size: 70%;
+}
+
+
+.weather__details {
+    width: 96%;
+    margin: 3% 2%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
+    background-color: ;
+}
+.label {
+    width: 96%;
+    margin: 2%;
+    text-align: left;
+    font-size: 110%;
+    font-weight: bold;
+}
+.weather__details .Details {
+    width: 96%;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+}
+.weather__details .Details div{
+    width: auto;
+    height: auto;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: left;
+    background-color: var(--sub-background);
+}
+.Details div .span{
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    font-size: 80%;
+    text-transform: capitalize;
+}
+.Details div .unit{
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    font-size: 80%;
+}
+   
+    .weather__details .Details {
+        border-radius: 15px;
+        background-color: var(--sub-background);
+
+    }
+    .weather__details .Details div {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        background-color: var(--sub-background);
+    }
+    .Details div .span {
+        color: #D2D2D2;
+        font-size: 65%;
+        text-align: left;
+    }
+    .Details div .unit {
+        font-size: 90%;
+        font-weight: bold;
+        text-align: left;
+    }
+    .weather__forcast {
+        display: none;
+    }
+    .page_forcast, .page_forcast > main{
+        display: block;
+    }

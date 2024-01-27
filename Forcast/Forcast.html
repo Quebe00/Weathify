@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="uft-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="Forcast.css" />
+    <script src="../Utils/Jquery/jquery.js"></script>
+</head>
+<body>
+
+    <section class="body">
+        <aside class="side_bar">
+            <div class="top_aside aside">
+                <button class="icon-holder" onclick="window.location.assign('../Home/Home.html')"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg></button>
+                <button class="icon-holder" onclick="window.location.assign('../Search/Search.html')" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="var(--color)" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg></button>
+            </div>
+            <div class="bottom_aside aside">
+                <button class="icon-holder" onclick="Location()" title="Refresh"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></button>
+            </div>
+        </aside>
+
+        <article class="pages">
+            <header class="header">
+                <button class="icon-holder" onclick="window.location.assign('../Home/Home.html?name=cache')" title="Back"><svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path> </svg></button>
+                <button class="Date Forcast__Date">..., ... ..</button>
+                <button class="icon-holder" onclick="Forcast()" title="Refresh"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></button>
+            </header>
+            
+            <main class="weather__details">
+                <div class="label">
+                    3 hours Forcast
+                </div>
+                <block class="Hourly_Forcasts"></div>
+                </block>
+            </main>
+            
+            <main class="weather__templ">
+                <div class="first">
+                    <button class="fig"><img src="" class="weather__icon" /></button><br />
+                    <button class="weather__condition">Mostly cloudy</button>
+                </div>
+                <div class="second">
+                    <button class="weather__temp">31°C</button>
+                    <button class="weather__period">.... - ....</button>
+                </div>
+            </main>
+
+            <main class="weather__details">
+                <div class="label">
+                    Details
+                </div>
+                <block class="Details">
+                    <div>
+                        <button class="span">Pressure</button>
+                        <button class="unit weather__pressure">1001kpa</button>
+                    </div>
+                    <div>
+                        <button class="span">Humidity</button>
+                        <button class="unit weather__humidity">25%</button>
+                    </div>
+                    <div>
+                        <button class="span">wind speed</button>
+                        <button class="unit weather__speed">1.3m/s</button>
+                    </div>
+                    <div>
+                        <button class="span">wind direction</button>
+                        <button class="unit weather__direction">45°N</button>
+                    </div>
+                    <div>
+                        <button class="span">Visibility</button>
+                        <button class="unit weather__visibility">1000</button>
+                    </div>
+                </block>
+            </main>
+
+            <main style="
+                width:100%;
+                height: 20vh;
+                "></main>
+        </article>
+    </section>
+
+</body>
+<script src="Forcast.js"></script>
+</html>
