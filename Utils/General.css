@@ -1,0 +1,144 @@
+@font-face {
+    font-family:"Poppins";
+    src: url("Fonts/Montserrat,Poppins,Roboto/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+* {
+    --background: /*#080323*/#020015;
+    --sub-background: /*#0D003F*/#05002E;
+    --hover: rgba(1, 1, 1, 0.2);
+    --color: #D2D2D2;
+    color: var(--color);
+    outline: 0;
+    resize: none;
+    user-select: none;
+    border-style: hidden;
+    font-family: "Poppins";
+}
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
+}
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align:;
+    margin-right: 3%;
+}
+.icon-holder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:;
+    font-size: 90%;
+}
+
+.icon-holder[title="Settings"]{
+    transform: rotate(90deg);
+}
+.subpage {
+    width: 100%;
+    height: 100vh;
+    display: ;
+    position: fixed;
+    inset: 0%;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+    background-color: rgba(1, 1, 1, 0.5);
+    z-index: 10;
+    display: none;
+}
+
+.body {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    padding: 0%;
+    margin: 0%;
+    overflow: hidden;
+    background-color: var(--background);
+}
+.side_bar {
+    position: relative;
+    width: 60px;
+    height: 94%;
+    padding: 2%;
+    margin: 3% 2%;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: var(--sub-background);
+}
+.side_bar > .aside {
+    width: 100%;
+    height: auto;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+}
+.side_bar .top_aside {
+    height: 25%;
+}
+.side_bar .bottom_aside {
+    height: auto;
+}
+.side_bar .aside .icon-holder {
+    background-color: transparent;
+    font-size: 90%;
+}
+.side_bar .aside .icon-holder:is(:hover) {
+    animation: hover .4s ease-in-out;
+    border-radius: 50%;
+}
+@keyframes hover {
+    from {
+        width: 40px;
+        background-color: transparent;
+    }
+    to {
+        width: 45px;
+        background-color: var(--background);
+    }
+}
+.side_bar .aside .icon-holder[title="Refresh"]:is(:active, :hover) {
+    animation: rotate .4s ease-in-out;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+.pages {
+    width: 100%;
+    height: 110vh;
+    position: relative;
+    padding: 0%;
+    margin: 0%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: var(--background);
+}
+
