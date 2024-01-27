@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="uft-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <link rel="stylesheet" href="Home.css" />
+    <script src="../Utils/Jquery/jquery.js"></script>
+</head>
+<body>
+
+    <section class="body">
+        <aside class="side_bar">
+            <div class="top_aside aside">
+                <button class="icon-holder"><svg class="icon" fill="var(--color)" viewBox="0 0 24 24" stroke="var(--color)" stroke-width="1.6" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg></button>
+                <button class="icon-holder" onclick="window.location.assign('../Search/Search.html')" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="#C8C8C8" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg></button>
+                <button class="icon-holder" title="Settings"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg></button>
+            </div>
+            <div class="bottom_aside aside">
+                <button class="icon-holder" onclick="Location()" title="Refresh"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></button>
+            </div>
+        </aside>
+
+        <article class="pages">
+            <div class="loader">
+                <svg version="1.1" class="icon" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                    <path fill="grey" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                        <animateTransform
+                            attributeName="transform"
+                            attributeType="XML"
+                            type="rotate"
+                            dur=".8s"
+                            from="0 50 50"
+                            to="360 50 50"
+                            repeatCount="indefinite" />
+                    </path>
+                </svg>
+            </div>
+            <header class="header">
+                <div class="bar_div" onclick="window.location.assign('../Search/Search.html')">
+                    <button class="i_c"><svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="#C8C8C8" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg></button>
+                    <button class="fake_inp_bar">Search locations for weather</button>
+                </div>
+                <div class="i_c_div">
+                    <button class="settings_btn icon-holder" title="Settings" onclick="settingsForm()"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg></button>
+                    <button class="refresh_btn icon-holder" onclick="Location()" title="Refresh"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></button>
+                </div>
+            </header>
+
+            <main class="weather__templ">
+                <div class="first">
+                    <button class="fig"><img src="" class="weather__icon" /></button><br />
+                    <button class="weather__condition">.....</button>
+                </div>
+                <div class="second">
+                    <button class="weather__temp">00°C</button>
+                    <button class="weather__location">..... ...., ... ....., ......</button>
+                </div>
+            </main>
+            
+    <main class="main">
+        <block class="pollution">
+            <div class="span">
+                Air pollution
+            </div>
+            <div class="radius">
+                <button class="inner">00%</button>
+            </div>
+        </block>
+        <block class="sun">
+            <div>
+                <button class="span">Sun rise</button>
+                <button class="unit sunrise">07:05AM</button>
+            </div>
+            <div>
+                <button class="span">Sun rise</button>
+                <button class="unit sunset">06:57PM</button>
+            </div>
+        </block>
+    </main>
+    
+            <main class="weather__details">
+                <div class="label">
+                    Details
+                </div>
+                <block class="Details">
+                    <div>
+                        <button class="span">Pressure</button>
+                        <button class="unit weather__pressure">00hpa</button>
+                    </div>
+                    <div>
+                        <button class="span">Humidity</button>
+                        <button class="unit weather__humidity">00%</button>
+                    </div>
+                    <div>
+                        <button class="span">wind speed</button>
+                        <button class="unit weather__speed">00m/s</button>
+                    </div>
+                    <div>
+                        <button class="span">wind direction</button>
+                        <button class="unit weather__direction">00°N</button>
+                    </div>
+                    <div>
+                        <button class="span">Visibility</button>
+                        <button class="unit weather__visibility">00mi</button>
+                    </div>
+                </block>
+            </main>
+
+            <main class="weather__forcast">
+                <div class="label" style="margin-left:4%;">
+                    Forcasts
+                </div>
+                <block class="Forcasts">
+                    <div onclick="">
+                        <button>Mon</button>
+                        <button class="fig"><img src"" /><figcaption>sunny</figcaption></button>
+                        <button>00°C</button>
+                    </div>
+                    <div>
+                        <button>Tue</button>
+                        <button class="fig"><img src"" /><figcaption>Rain</figcaption></button>
+                        <button>00°C</button>
+                    </div>
+                    <div>
+                        <button>Wed</button>
+                        <button class="fig"><img src"" /><figcaption>snow</figcaption></button>
+                        <button>00°C</button>
+                    </div>
+                    <div>
+                        <button>Thu</button>
+                        <button class="fig"><img src"" /><figcaption>Haze</figcaption></button>
+                        <button>00°C</button>
+                    </div>
+                    <div>
+                        <button>Fri</button>
+                        <button class="fig"><img src"" /><figcaption>cloudy</figcaption></button>
+                        <button>00°C</button>
+                    </div>
+                </block>
+                </main>
+                
+            <main style="
+                width:100%;
+                height: 20vh;
+                "></main>
+        </article>
+
+        <article class="subpage">
+            <form class="form" action="#" onsubmit="event.preventDefault()">
+                <header class="header">
+                    <button class="span">Units</button>
+                    <button class="icon-holder close_btn"><svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                </header>
+                <main class="mainItm">
+                    <div class="measurement" onclick="updateSettings(this)">
+                        <button class="span">Temperature</button>
+                        <button class="unit t_unit">°C</button>
+                    </div>
+                    <div class="measurement" onclick="updateSettings(this)">
+                        <button class="span">Pressure</button>
+                        <button class="unit p_unit">hpa</button>
+                    </div>
+                    <div class="measurement" onclick="updateSettings(this)">
+                        <button class="span">Wind speed</button>
+                        <button class="unit s_unit">m/s</button>
+                    </div>
+                </main>
+                <footer>
+                    <button class="apply_btn" hidden>Apply</button>
+                </footer>
+            </form>
+        </article>
+    </section>
+
+</body>
+<script src="../Utils/Jquery/query.js"></script>
+<script src="Home.js"></script>
+</html>
