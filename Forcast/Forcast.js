@@ -50,7 +50,7 @@ const loadUnits = (val) =>{
         let d = ev.target.result;
         temp__measure = d.temp;
         pressure__unit = d.pressure;
-        speed__unit = d.pressure;
+        speed__unit = d.speed;
     }
     r.onerror = () => {}
 }
