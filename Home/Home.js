@@ -42,14 +42,14 @@ const onDefaultData = () => {
         let d = ev.target.result.length;
         if (d == 0) {
             let s_2 = dbTx("Settings", "readwrite");
-            let r_2 = s_2.put(JSON.stringify(
+            let r_2 = s_2.put(
                 {
                     "id": "Data",
                     "temp": "°C",
                     "pressure": "hpa",
                     "speed": "m/s"
                 }
-            ), "Data");
+            , "Data");
             r_2.onsuccess = () =>{}
             r_2.onerror = () => {}
         }
@@ -168,7 +168,7 @@ const Location = () => {
         getWeatherByLatLon(search.lat, search.lon);
 
     } else {
-        if (navigator.geo) {
+        if (navigator.geolocation) {
             const geo = (pos) => {
                 getWeatherByLatLon(pos.coords.lat, pos.coords.lon);
             }
@@ -250,7 +250,7 @@ let direction = (val) => {
 
 let db = null;
 let store = null;
-let DBName = window.indexedDB.open("__Test2__", 1);
+let DBName = window.indexedDB.open("__Test1__", 1);
 
 function startDB() {
     DBName.onerror = (err) => {
@@ -341,7 +341,7 @@ async function getWeatherByName(name) {
         let link = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${APIkey}&units=${temp__unit}`);
         let d = await link.json();
         arrangeData(JSON.stringify(d));
-        arrangeForcast(d.coord);
+        arrangeForcast(JSON.stringify(d.coord));
         air_pollution(d.coord);
 
     }catch (e) {
@@ -363,7 +363,7 @@ async function arrangeForcast(c) {
 function arrangeData(data) {
     document.querySelector(".loader").style.display = "none";
     let d = JSON.parse(data);
-    console.log(d);
+    
     let country = country__code.filter(e => e.code === d.sys.country);
 
     let dt = new Date();
