@@ -100,8 +100,8 @@ function arrangeLocation(data, reason) {
 
 function Open(json) {
     let key = (json.getAttribute("data-key"));
-    window.open(`../Home/Home.html?name=${key}`);
+    window.location.assign(`../Home/Home.html?name=${key}`);
 }
 function goBack() {
-    window.open(`../Home/Home.html?name=cache`);
+    window.loaction.assign(`../Home/Home.html?name=cache`);
 }
